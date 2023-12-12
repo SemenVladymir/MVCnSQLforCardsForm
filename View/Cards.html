@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <script src="scripts.js"></script>
+    <form class="ui-form" id="form" action="/Cards/Controller/index.php" method="POST">
+        <h3 id="head">Add new card</h3>
+        <div class="form-row">
+            <input
+                    id="title"
+                    type="text"
+                    name="title"
+                    required autocomplete="title">
+            <label for="title">Title</label>
+        </div>
+        <div id="extend">
+            <div class="form-row">
+                <input
+                        id="text"
+                        type="text"
+                        name="text"
+                        required
+                        autocomplete="off">
+                <label for="text">Description</label>
+            </div>
+            <div class="form-row">
+                <input
+                        id="createdate"
+                        type="text"
+                        name="createdate"
+                        onfocus="(this.type='date')"
+                        onblur="if(!this.value)this.type='text'"
+                        required
+                        autocomplete="off">
+                <label for="createdate">Date</label>
+            </div>
+        </div>
+        <div class="form-row" id="phone-box" hidden>
+            <input
+                        id="phone"
+                        type="text"
+                        name="phone"
+                        autocomplete="off">
+            <label for="phone">Phone</label>
+        </div>
+        <div class="radiobuttons" id="radiobuttons">
+            <div class="block">
+                <input
+                        id="onlytitle"
+                        name="radio"
+                        type="radio"
+                        onchange="ChangeForm(this)">
+                <label for="onlytitle">Only title</label>
+            </div>
+            <div class="block">
+                <input
+                        id="extended"
+                        name="radio"
+                        type="radio"
+                        checked
+                        onchange="ChangeForm(this)">
+                <label for="extended">Usual</label>
+            </div>
+            <div class="block">
+                <input
+                        id="addphone"
+                        name="radio"
+                        type="radio"
+                        onchange="ChangeForm(this)">
+                <label for="addphone">With phone</label>
+            </div>
+        </div>
+        <input
+        id="redstyle"
+        name="redstyle"
+        type="checkbox"
+        onchange="ChangeStyle(this)">
+        <label for="redstyle">Red style</label>
+        <p><a href="/Cards/Controller/index.php">Show all my cards</a></p>
+        <p><input type="submit" id="submit" name="submit" value="Add card"></p>
+    </form>
+</body>
+</html>
